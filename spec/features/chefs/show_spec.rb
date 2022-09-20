@@ -27,7 +27,7 @@ RSpec.describe 'Chef Show Page Feature' do
 
             expect(current_path).to eq("/chefs/#{chef1.id}/ingredients")
             expect(current_path).to eq(chef_ingredients_path(chef1))
-            expect(page).to have_content(ingredient1.name)
+            expect(page).to have_content(ingredient1.name, count: 1)
             expect(page).to have_content(ingredient2.name)
             expect(page).to_not have_content(ingredient3.name)
           end
