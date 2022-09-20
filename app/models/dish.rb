@@ -4,7 +4,11 @@ class Dish < ApplicationRecord
   has_many :ingredient_dishes
   has_many :ingredients, through: :ingredient_dishes
 
-  def self.total_calories
-  i
+  def total_calories
+  calorie_counter = []
+  ingredients.each do |ingredient|
+    calorie_counter << ingredient.calories
+  end
+  calorie_counter.sum
   end
 end

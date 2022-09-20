@@ -39,9 +39,8 @@ RSpec.describe 'Dishes Show Page Feature' do
       ingredient1 = dish1.ingredients.create(name: "Fat", calories: 9000)
       ingredient2 = dish1.ingredients.create(name: "Milk", calories: 500)
 
-
       visit "/dishes/#{dish1.id}"
-      expect(page).to have_content("Calorie Count: 1400")
+      expect(page).to have_content("Total Calories: 9500")
     end
   end
 end
